@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk-Assessment Toolkit for Accountants</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Risk Toolkit</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#assessment" class="nav-link">Assessment</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#downloads" class="nav-link">Downloads</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Risk-Assessment Toolkit<br>for Accountants</h1>
+            <p class="hero-subtitle">Evaluate risks when adopting AI, automation, or analytics tools in finance functions. Built with modern design principles and interactive features.</p>
+            <div class="hero-meta">
+                <span class="version">Version 1.0</span>
+                <span class="date">Created 12 June 2025</span>
+                <span class="license">CC-BY 4.0</span>
+            </div>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="scrollToSection('assessment')">Start Assessment</button>
+                <button class="btn-secondary" onclick="scrollToSection('overview')">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="risk-matrix-preview">
+                <div class="matrix-cell low"></div>
+                <div class="matrix-cell medium"></div>
+                <div class="matrix-cell high"></div>
+                <div class="matrix-cell critical"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Overview</h2>
+                <p>Comprehensive risk evaluation made simple</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Scored Self-Assessment</h3>
+                    <p>Interactive questionnaire with likelihood and impact scoring</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Color-Coded Heat Map</h3>
+                    <p>Visual risk matrix with intuitive color coding</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Actionable Recommendations</h3>
+                    <p>Suggested actions for each risk band</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>Downloadable Templates</h3>
+                    <p>Ready-to-use templates and worked examples</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Matrix Section -->
+    <section id="matrix" class="risk-matrix-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Risk Matrix</h2>
+                <p>Likelihood × Impact Assessment Framework</p>
+            </div>
+            <div class="risk-matrix-container">
+                <div class="risk-matrix">
+                    <div class="matrix-header">
+                        <div class="matrix-corner"></div>
+                        <div class="impact-header">
+                            <div class="impact-cell">Low (1)</div>
+                            <div class="impact-cell">Medium (2)</div>
+                            <div class="impact-cell">High (3)</div>
+                            <div class="impact-cell">Critical (4)</div>
+                        </div>
+                    </div>
+                    <div class="matrix-body">
+                        <div class="likelihood-labels">
+                            <div class="likelihood-cell">Rare (1)</div>
+                            <div class="likelihood-cell">Unlikely (2)</div>
+                            <div class="likelihood-cell">Likely (3)</div>
+                            <div class="likelihood-cell">Almost Certain (4)</div>
+                        </div>
+                        <div class="matrix-grid">
+                            <div class="risk-cell low" data-risk="1">Low</div>
+                            <div class="risk-cell low" data-risk="2">Low</div>
+                            <div class="risk-cell medium" data-risk="3">Medium</div>
+                            <div class="risk-cell high" data-risk="4">High</div>
+                            <div class="risk-cell low" data-risk="2">Low</div>
+                            <div class="risk-cell medium" data-risk="4">Medium</div>
+                            <div class="risk-cell high" data-risk="6">High</div>
+                            <div class="risk-cell high" data-risk="8">High</div>
+                            <div class="risk-cell medium" data-risk="3">Medium</div>
+                            <div class="risk-cell high" data-risk="6">High</div>
+                            <div class="risk-cell high" data-risk="9">High</div>
+                            <div class="risk-cell critical" data-risk="12">Critical</div>
+                            <div class="risk-cell high" data-risk="4">High</div>
+                            <div class="risk-cell high" data-risk="8">High</div>
+                            <div class="risk-cell critical" data-risk="12">Critical</div>
+                            <div class="risk-cell critical" data-risk="16">Critical</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="matrix-tip">
+                    <p><strong>Tip:</strong> Choose scores based on realistic, documented examples. Then map them into the grid above.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -->
+    <section id="assessment" class="assessment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Self-Assessment Questionnaire</h2>
+                <p>Score each risk factor based on likelihood and impact</p>
+            </div>
+            <div class="assessment-container">
+                <div class="assessment-table">
+                    <div class="table-header">
+                        <div class="col-risk">Risk Factor</div>
+                        <div class="col-likelihood">Likelihood (1-4)</div>
+                        <div class="col-impact">Impact (1-4)</div>
+                        <div class="col-score">Risk Score</div>
+                        <div class="col-notes">Notes / Controls</div>
+                    </div>
+                    <div id="risk-items">
+                        <!-- Risk items will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="assessment-actions">
+                    <button class="btn-primary" onclick="calculateRisks()">Calculate Risk Scores</button>
+                    <button class="btn-secondary" onclick="exportResults()">Export Results</button>
+                    <button class="btn-secondary" onclick="resetAssessment()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2>Risk Summary Dashboard</h2>
+                <p>Visual overview of your risk assessment results</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Risk Distribution</h3>
+                    <div class="risk-chart" id="risk-chart"></div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Category Breakdown</h3>
+                    <div class="category-chart" id="category-chart"></div>
+                </div>
+                <div class="dashboard-card summary">
+                    <h3>Assessment Summary</h3>
+                    <div class="summary-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="total-risks">0</div>
+                            <div class="stat-label">Total Risks</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number critical" id="critical-risks">0</div>
+                            <div class="stat-label">Critical</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number high" id="high-risks">0</div>
+                            <div class="stat-label">High</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number medium" id="medium-risks">0</div>
+                            <div class="stat-label">Medium</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actions Section -->
+    <section class="actions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recommended Actions by Risk Band</h2>
+                <p>Take appropriate measures based on your risk scores</p>
+            </div>
+            <div class="actions-grid">
+                <div class="action-card low">
+                    <div class="action-header">
+                        <div class="action-score">1-4</div>
+                        <div class="action-label">Low Risk</div>
+                    </div>
+                    <p>Monitor only. No immediate action needed.</p>
+                </div>
+                <div class="action-card medium">
+                    <div class="action-header">
+                        <div class="action-score">5-8</div>
+                        <div class="action-label">Medium Risk</div>
+                    </div>
+                    <p>Apply at least one mitigation. Reassess quarterly.</p>
+                </div>
+                <div class="action-card high">
+                    <div class="action-header">
+                        <div class="action-score">9-11</div>
+                        <div class="action-label">High Risk</div>
+                    </div>
+                    <p>Mitigation required before full deployment. Document controls.</p>
+                </div>
+                <div class="action-card critical">
+                    <div class="action-header">
+                        <div class="action-score">12-16</div>
+                        <div class="action-label">Critical Risk</div>
+                    </div>
+                    <p>Pause project. Seek legal, regulatory or senior sign-off.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="downloads">
+        <div class="container">
+            <div class="section-header">
+                <h2>Downloads</h2>
+                <p>Templates and resources to support your risk assessment</p>
+            </div>
+            <div class="downloads-grid">
+                <div class="download-card">
+                    <div class="download-icon">📄</div>
+                    <h3>Risk Scoring Template</h3>
+                    <p>Excel template with pre-formatted dropdowns and scoring logic</p>
+                    <button class="btn-download">Download .xlsx</button>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">📑</div>
+                    <h3>Worked Example</h3>
+                    <p>Variance Commentary Use Case with detailed risk analysis</p>
+                    <button class="btn-download">Download .pdf</button>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">🔐</div>
+                    <h3>Prompt Redaction Guide</h3>
+                    <p>Best practices for handling sensitive data in AI prompts</p>
+                    <button class="btn-download">Download .pdf</button>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">📘</div>
+                    <h3>AI Governance Checklist</h3>
+                    <p>Comprehensive checklist for implementing AI governance</p>
+                    <button class="btn-download">Download .pdf</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Attribution & License</h3>
+                    <p>This toolkit was developed as part of a project funded by the Royal Society of Edinburgh (SRG23/XXXX).</p>
+                    <p>Freely available under the <strong>Creative Commons CC-BY 4.0</strong> licence.</p>
+                    <p>Attribution: Michael Guo and collaborators, University of the West of Scotland, 2025.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#assessment">Assessment</a>
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#downloads">Downloads</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
