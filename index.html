@@ -88,45 +88,54 @@
                 <p>Likelihood × Impact Assessment Framework</p>
             </div>
             <div class="risk-matrix-container">
-                <div class="risk-matrix">
-                    <div class="matrix-header">
-                        <div class="matrix-corner"></div>
-                        <div class="impact-header">
-                            <div class="impact-cell">Low (1)</div>
-                            <div class="impact-cell">Medium (2)</div>
-                            <div class="impact-cell">High (3)</div>
-                            <div class="impact-cell">Critical (4)</div>
-                        </div>
+                <div class="modern-risk-matrix">
+                    <!-- Impact header row -->
+                    <div class="matrix-impact-header">
+                        <div class="matrix-blank-cell"></div>
+                        <div class="matrix-header-cell">Low (1)</div>
+                        <div class="matrix-header-cell">Medium (2)</div>
+                        <div class="matrix-header-cell">High (3)</div>
+                        <div class="matrix-header-cell">Critical (4)</div>
                     </div>
-                    <div class="matrix-body">
-                        <div class="likelihood-labels">
-                            <div class="likelihood-cell">Rare (1)</div>
-                            <div class="likelihood-cell">Unlikely (2)</div>
-                            <div class="likelihood-cell">Likely (3)</div>
-                            <div class="likelihood-cell">Almost Certain (4)</div>
-                        </div>
-                        <div class="matrix-grid">
-                            <div class="risk-cell low" data-risk="1">Low</div>
-                            <div class="risk-cell low" data-risk="2">Low</div>
-                            <div class="risk-cell medium" data-risk="3">Medium</div>
-                            <div class="risk-cell high" data-risk="4">High</div>
-                            <div class="risk-cell low" data-risk="2">Low</div>
-                            <div class="risk-cell medium" data-risk="4">Medium</div>
-                            <div class="risk-cell high" data-risk="6">High</div>
-                            <div class="risk-cell high" data-risk="8">High</div>
-                            <div class="risk-cell medium" data-risk="3">Medium</div>
-                            <div class="risk-cell high" data-risk="6">High</div>
-                            <div class="risk-cell high" data-risk="9">High</div>
-                            <div class="risk-cell critical" data-risk="12">Critical</div>
-                            <div class="risk-cell high" data-risk="4">High</div>
-                            <div class="risk-cell high" data-risk="8">High</div>
-                            <div class="risk-cell critical" data-risk="12">Critical</div>
-                            <div class="risk-cell critical" data-risk="16">Critical</div>
-                        </div>
+                    
+                    <!-- Rare row -->
+                    <div class="matrix-row">
+                        <div class="matrix-row-header">Rare (1)</div>
+                        <div class="matrix-cell low" data-risk="1">Low</div>
+                        <div class="matrix-cell low" data-risk="2">Low</div>
+                        <div class="matrix-cell medium" data-risk="3">Medium</div>
+                        <div class="matrix-cell high" data-risk="4">High</div>
+                    </div>
+                    
+                    <!-- Unlikely row -->
+                    <div class="matrix-row">
+                        <div class="matrix-row-header">Unlikely (2)</div>
+                        <div class="matrix-cell low" data-risk="2">Low</div>
+                        <div class="matrix-cell medium" data-risk="4">Medium</div>
+                        <div class="matrix-cell high" data-risk="6">High</div>
+                        <div class="matrix-cell high" data-risk="8">High</div>
+                    </div>
+                    
+                    <!-- Likely row -->
+                    <div class="matrix-row">
+                        <div class="matrix-row-header">Likely (3)</div>
+                        <div class="matrix-cell medium" data-risk="3">Medium</div>
+                        <div class="matrix-cell high" data-risk="6">High</div>
+                        <div class="matrix-cell high" data-risk="9">High</div>
+                        <div class="matrix-cell critical" data-risk="12">Critical</div>
+                    </div>
+                    
+                    <!-- Almost Certain row -->
+                    <div class="matrix-row">
+                        <div class="matrix-row-header">Almost<br>Certain (4)</div>
+                        <div class="matrix-cell high" data-risk="4">High</div>
+                        <div class="matrix-cell high" data-risk="8">High</div>
+                        <div class="matrix-cell critical" data-risk="12">Critical</div>
+                        <div class="matrix-cell critical" data-risk="16">Critical</div>
                     </div>
                 </div>
                 <div class="matrix-tip">
-                    <p><strong>Tip:</strong> Choose scores based on realistic, documented examples. Then map them into the grid above.</p>
+                    <p><strong>Tip:</strong> Risk score = Likelihood × Impact. Higher scores require more immediate attention.</p>
                 </div>
             </div>
         </div>

@@ -607,112 +607,114 @@ section {
 /* Risk Matrix Section */
 .risk-matrix-section {
     background: white;
+    padding: var(--spacing-xxl) 0;
 }
 
 .risk-matrix-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
-.risk-matrix {
-    background: white;
-    border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-medium);
+/* Modern Risk Matrix */
+.modern-risk-matrix {
+    display: grid;
+    grid-template-rows: auto repeat(4, 1fr);
+    border-radius: 16px;
     overflow: hidden;
-    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--spacing-xl);
+    background: #f5f5f7;
 }
 
-.matrix-header {
+.matrix-impact-header {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    background: var(--gray-1);
+    grid-template-columns: 140px repeat(4, 1fr);
+    background: #f5f5f7;
 }
 
-.matrix-corner {
-    background: var(--gray-2);
-    border-right: 1px solid var(--gray-3);
-    border-bottom: 1px solid var(--gray-3);
+.matrix-blank-cell {
+    padding: var(--spacing-md);
+    text-align: center;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-bottom: 1px solid #e5e5ea;
 }
 
-.impact-header {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.impact-cell {
+.matrix-header-cell {
     padding: var(--spacing-md);
     text-align: center;
     font-weight: 600;
-    border-right: 1px solid var(--gray-3);
-    border-bottom: 1px solid var(--gray-3);
+    color: var(--text-primary);
+    border-bottom: 1px solid #e5e5ea;
 }
 
-.impact-cell:last-child {
-    border-right: none;
-}
-
-.matrix-body {
+.matrix-row {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 140px repeat(4, 1fr);
 }
 
-.likelihood-labels {
-    background: var(--gray-1);
-}
-
-.likelihood-cell {
-    padding: var(--spacing-md);
-    font-weight: 600;
-    border-right: 1px solid var(--gray-3);
-    border-bottom: 1px solid var(--gray-3);
+.matrix-row-header {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: var(--spacing-md);
     text-align: center;
-    height: 80px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: #f5f5f7;
+    border-bottom: 1px solid #e5e5ea;
+    border-right: 1px solid #e5e5ea;
 }
 
-.likelihood-cell:last-child {
+.matrix-row:last-child .matrix-row-header,
+.matrix-row:last-child .matrix-cell {
     border-bottom: none;
 }
 
-.matrix-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-}
-
-.risk-cell {
-    padding: var(--spacing-md);
+.matrix-cell {
+    padding: var(--spacing-xl);
     text-align: center;
     font-weight: 600;
     color: white;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
     transition: all 0.3s ease;
     cursor: pointer;
+    border: 4px solid white;
 }
 
-.risk-cell:hover {
-    transform: scale(1.05);
+.matrix-cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     z-index: 10;
-    box-shadow: var(--shadow-medium);
 }
 
-.risk-cell.low { background: var(--risk-low); }
-.risk-cell.medium { background: var(--risk-medium); }
-.risk-cell.high { background: var(--risk-high); }
-.risk-cell.critical { background: var(--risk-critical); }
+/* Updated risk colors to match the image */
+.risk-cell.low, .matrix-cell.low { 
+    background: #4ade80; /* Bright green */
+}
+
+.risk-cell.medium, .matrix-cell.medium { 
+    background: #fb923c; /* Orange */
+}
+
+.risk-cell.high, .matrix-cell.high { 
+    background: #f97066; /* Coral red */
+}
+
+.risk-cell.critical, .matrix-cell.critical { 
+    background: #ef4444; /* Bright red */
+}
 
 .matrix-tip {
-    background: var(--gray-1);
+    background: #f5f5f7;
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 /* Assessment Section */
