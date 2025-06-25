@@ -302,44 +302,7 @@ section {
     margin: 0 auto;
 }
 
-/* Overview Section */
-.overview {
-    background: var(--surface);
-}
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.feature-card {
-    background: white;
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-small);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-medium);
-}
-
-.feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
-}
-
-.feature-card h3 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-primary);
-}
-
-.feature-card p {
-    color: var(--text-secondary);
-}
 
 /* Risk Matrix Section */
 .risk-matrix-section {
