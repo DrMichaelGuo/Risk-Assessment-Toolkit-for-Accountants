@@ -99,9 +99,39 @@ function initializeNavigation() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                // Close mobile menu if it's open
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
             }
         });
     });
+    
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-links') && 
+                !event.target.closest('.menu-toggle') &&
+                navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+        
+        // Close menu when nav-button is clicked
+        document.querySelector('.nav-button').addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    }
 
     // Update navbar on scroll
     window.addEventListener('scroll', function() {
