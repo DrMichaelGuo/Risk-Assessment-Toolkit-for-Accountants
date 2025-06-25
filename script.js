@@ -237,7 +237,9 @@ function getRiskLevel(score) {
 
 // Update dashboard statistics
 function updateDashboard(total, critical, high, medium, low) {
-    document.getElementById('total-risks').textContent = total;
+    // Calculate total as the sum of critical, high, and medium risks
+    const dynamicTotal = critical + high + medium;
+    document.getElementById('total-risks').textContent = dynamicTotal;
     document.getElementById('critical-risks').textContent = critical;
     document.getElementById('high-risks').textContent = high;
     document.getElementById('medium-risks').textContent = medium;
