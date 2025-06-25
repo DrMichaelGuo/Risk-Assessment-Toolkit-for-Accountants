@@ -53,7 +53,7 @@ const riskData = [
     },
     {
         id: 7,
-        factor: "Regulatory breach (GDPR, ISA) due to misuse",
+        factor: "Regulatory breach (GDPR) due to misuse",
         defaultLikelihood: 2,
         defaultImpact: 4,
         category: "Data Privacy",
