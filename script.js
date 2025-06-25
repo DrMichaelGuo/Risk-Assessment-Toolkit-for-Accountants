@@ -183,7 +183,6 @@ function populateAssessment() {
 
 // Calculate risk scores and update display
 function calculateRisks() {
-    let totalRisks = 0;
     let criticalRisks = 0;
     let highRisks = 0;
     let mediumRisks = 0;
@@ -206,7 +205,6 @@ function calculateRisks() {
             scoreElement.className = 'risk-score ' + getRiskLevel(score);
 
             // Update statistics
-            totalRisks++;
             if (score >= 12) criticalRisks++;
             else if (score >= 9) highRisks++;
             else if (score >= 5) mediumRisks++;
@@ -222,8 +220,8 @@ function calculateRisks() {
         }
     });
 
-    // Update dashboard
-    updateDashboard(totalRisks, criticalRisks, highRisks, mediumRisks, lowRisks);
+    // Update dashboard - total will be calculated inside updateDashboard
+    updateDashboard(0, criticalRisks, highRisks, mediumRisks, lowRisks);
     updateCharts(categoryStats);
 }
 
@@ -248,48 +246,28 @@ function updateDashboard(total, critical, high, medium, low) {
 // Update charts (simplified version)
 function updateCharts(categoryStats) {
     const riskChartElement = document.getElementById('risk-chart');
-    const categoryChartElement = document.getElementById('category-chart');
-
+    
     // Create simple visual representations
-    const totalRisks = riskData.length;
-    const criticalCount = document.getElementById('critical-risks').textContent;
-    const highCount = document.getElementById('high-risks').textContent;
-    const mediumCount = document.getElementById('medium-risks').textContent;
-    const lowCount = totalRisks - criticalCount - highCount - mediumCount;
+    const criticalCount = parseInt(document.getElementById('critical-risks').textContent) || 0;
+    const highCount = parseInt(document.getElementById('high-risks').textContent) || 0;
+    const mediumCount = parseInt(document.getElementById('medium-risks').textContent) || 0;
+    const lowCount = 0; // We're only counting critical, high, and medium risks
+    const totalRisks = criticalCount + highCount + mediumCount;
 
     // Risk distribution chart
     riskChartElement.innerHTML = `
         <div style="display: flex; height: 200px; align-items: end; gap: 10px; justify-content: center;">
-            <div style="background: var(--risk-low); width: 40px; height: ${(lowCount / totalRisks) * 150}px; border-radius: 4px; position: relative;">
-                <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">Low</span>
-            </div>
-            <div style="background: var(--risk-medium); width: 40px; height: ${(mediumCount / totalRisks) * 150}px; border-radius: 4px; position: relative;">
+            <div style="background: var(--risk-medium); width: 40px; height: ${totalRisks > 0 ? (mediumCount / totalRisks) * 150 : 0}px; border-radius: 4px; position: relative;">
                 <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">Med</span>
             </div>
-            <div style="background: var(--risk-high); width: 40px; height: ${(highCount / totalRisks) * 150}px; border-radius: 4px; position: relative;">
+            <div style="background: var(--risk-high); width: 40px; height: ${totalRisks > 0 ? (highCount / totalRisks) * 150 : 0}px; border-radius: 4px; position: relative;">
                 <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">High</span>
             </div>
-            <div style="background: var(--risk-critical); width: 40px; height: ${(criticalCount / totalRisks) * 150}px; border-radius: 4px; position: relative;">
+            <div style="background: var(--risk-critical); width: 40px; height: ${totalRisks > 0 ? (criticalCount / totalRisks) * 150 : 0}px; border-radius: 4px; position: relative;">
                 <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">Crit</span>
             </div>
         </div>
     `;
-
-    // Category breakdown
-    let categoryHtml = '';
-    Object.keys(categoryStats).forEach(category => {
-        const stats = categoryStats[category];
-        categoryHtml += `
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--gray-2);">
-                <span style="font-size: 14px; font-weight: 500;">${category}</span>
-                <div style="display: flex; gap: 8px;">
-                    <span style="background: var(--risk-high); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px;">${stats.high}</span>
-                    <span style="background: var(--risk-critical); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px;">${stats.critical}</span>
-                </div>
-            </div>
-        `;
-    });
-    categoryChartElement.innerHTML = categoryHtml;
 }
 
 // Add scroll animations
@@ -308,7 +286,7 @@ function addScrollAnimations() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.feature-card, .action-card, .download-card, .dashboard-card').forEach(el => {
+    document.querySelectorAll('.feature-card, .download-card, .dashboard-card').forEach(el => {
         observer.observe(el);
     });
 }
