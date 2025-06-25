@@ -256,15 +256,18 @@ function updateCharts(categoryStats) {
 
     // Risk distribution chart
     riskChartElement.innerHTML = `
-        <div style="display: flex; height: 200px; align-items: end; gap: 10px; justify-content: center;">
-            <div style="background: var(--risk-medium); width: 40px; height: ${totalRisks > 0 ? (mediumCount / totalRisks) * 150 : 0}px; border-radius: 4px; position: relative;">
-                <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">Med</span>
+        <div style="display: flex; height: 200px; align-items: flex-end; gap: 20px; justify-content: center; padding: 20px 0;">
+            <div style="background: var(--risk-medium); width: 60px; height: ${totalRisks > 0 ? (mediumCount / totalRisks) * 150 : 0}px; border-radius: 8px; position: relative; transition: all 0.3s ease;">
+                <span style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-size: 14px; color: var(--text-secondary); font-weight: 500;">Med</span>
+                ${mediumCount > 0 ? `<span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: 600;">${mediumCount}</span>` : ''}
             </div>
-            <div style="background: var(--risk-high); width: 40px; height: ${totalRisks > 0 ? (highCount / totalRisks) * 150 : 0}px; border-radius: 4px; position: relative;">
-                <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">High</span>
+            <div style="background: var(--risk-high); width: 60px; height: ${totalRisks > 0 ? (highCount / totalRisks) * 150 : 0}px; border-radius: 8px; position: relative; transition: all 0.3s ease;">
+                <span style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-size: 14px; color: var(--text-secondary); font-weight: 500;">High</span>
+                ${highCount > 0 ? `<span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: 600;">${highCount}</span>` : ''}
             </div>
-            <div style="background: var(--risk-critical); width: 40px; height: ${totalRisks > 0 ? (criticalCount / totalRisks) * 150 : 0}px; border-radius: 4px; position: relative;">
-                <span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary);">Crit</span>
+            <div style="background: var(--risk-critical); width: 60px; height: ${totalRisks > 0 ? (criticalCount / totalRisks) * 150 : 0}px; border-radius: 8px; position: relative; transition: all 0.3s ease;">
+                <span style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-size: 14px; color: var(--text-secondary); font-weight: 500;">Crit</span>
+                ${criticalCount > 0 ? `<span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: 600;">${criticalCount}</span>` : ''}
             </div>
         </div>
     `;
