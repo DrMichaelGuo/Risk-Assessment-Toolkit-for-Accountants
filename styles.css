@@ -147,7 +147,7 @@ p {
 }
 
 /* Buttons */
-.btn-primary, .btn-secondary, .btn-download {
+.btn-primary, .btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -184,17 +184,7 @@ p {
     transform: translateY(-2px);
 }
 
-.btn-download {
-    background: var(--success-color);
-    color: white;
-    font-size: var(--font-size-small);
-    padding: 8px 16px;
-}
 
-.btn-download:hover {
-    background: #28A745;
-    transform: translateY(-1px);
-}
 
 /* Hero Section */
 .hero {
@@ -610,45 +600,7 @@ section {
     color: var(--text-primary);
 }
 
-/* Downloads Section */
-.downloads {
-    background: white;
-}
 
-.downloads-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.download-card {
-    background: var(--surface);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-small);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.download-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-medium);
-}
-
-.download-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
-}
-
-.download-card h3 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-primary);
-}
-
-.download-card p {
-    margin-bottom: var(--spacing-lg);
-    color: var(--text-secondary);
-}
 
 /* Footer */
 .footer {
@@ -738,10 +690,7 @@ section {
         grid-template-columns: 1fr;
     }
     
-    .downloads-grid {
-        grid-template-columns: 1fr;
-    }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -789,8 +738,7 @@ html {
 @media print {
     .navbar,
     .hero-actions,
-    .assessment-actions,
-    .btn-download {
+    .assessment-actions {
         display: none;
     }
     

@@ -461,15 +461,7 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Add download button functionality
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.btn-download').forEach(button => {
-        button.addEventListener('click', function() {
-            const cardTitle = this.parentElement.querySelector('h3').textContent;
-            showNotification(`${cardTitle} would be downloaded in a real implementation`, 'info');
-        });
-    });
-});
+
 
 // Keyboard shortcuts
 document.addEventListener('keydown', function(e) {
