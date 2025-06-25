@@ -463,6 +463,48 @@ function showNotification(message, type = 'info') {
 
 
 
+// How To Use Modal Functions
+function showHowToUse() {
+    const modal = document.getElementById('howToUseModal');
+    modal.classList.add('show');
+    
+    // Add event listener for escape key
+    document.addEventListener('keydown', closeModalOnEscape);
+    
+    // Add event listener for clicking outside
+    modal.addEventListener('click', closeModalOnOutsideClick);
+    
+    // Add event listener for close button
+    const closeBtn = document.querySelector('.modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Show a notification
+    showNotification('How To Use guide opened', 'info');
+}
+
+function closeModal() {
+    const modal = document.getElementById('howToUseModal');
+    modal.classList.remove('show');
+    
+    // Remove event listeners
+    document.removeEventListener('keydown', closeModalOnEscape);
+    modal.removeEventListener('click', closeModalOnOutsideClick);
+}
+
+function closeModalOnEscape(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+}
+
+function closeModalOnOutsideClick(e) {
+    if (e.target === document.getElementById('howToUseModal')) {
+        closeModal();
+    }
+}
+
 // Keyboard shortcuts
 document.addEventListener('keydown', function(e) {
     // Ctrl/Cmd + E to export
@@ -475,6 +517,12 @@ document.addEventListener('keydown', function(e) {
     if ((e.ctrlKey || e.metaKey) && e.key === 'r' && e.shiftKey) {
         e.preventDefault();
         resetAssessment();
+    }
+    
+    // Ctrl/Cmd + H to show How To Use
+    if ((e.ctrlKey || e.metaKey) && e.key === 'h') {
+        e.preventDefault();
+        showHowToUse();
     }
 });
 

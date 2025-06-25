@@ -36,6 +36,7 @@
             </div>
             <div class="hero-actions">
                 <button class="btn-primary" onclick="scrollToSection('assessment')">Start Assessment</button>
+                <button class="btn-secondary" onclick="showHowToUse()">How To Use This Toolkit</button>
             </div>
         </div>
         <div class="hero-visual">
@@ -231,6 +232,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- How To Use Modal -->
+    <div id="howToUseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How To Use This Toolkit</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h3>Step 1: Understand the Risk Matrix</h3>
+                <p>The risk matrix provides a visual framework to assess the likelihood and impact of various risks. Risks are categorized as Low, Medium, High, or Critical based on their combined score.</p>
+                
+                <h3>Step 2: Complete the Self-Assessment</h3>
+                <p>Score each risk factor based on likelihood (how often it might occur) and impact (the severity if it does occur). Use the 1-4 scale provided.</p>
+                
+                <h3>Step 3: Review Your Dashboard</h3>
+                <p>After completing the assessment, review your risk summary dashboard. This provides an overall picture of your risk profile.</p>
+                
+                <h3>Step 4: Take Recommended Actions</h3>
+                <p>Follow the recommended actions for each risk band. Higher risk scores require more immediate and thorough mitigation strategies.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeModal()">Got it!</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
